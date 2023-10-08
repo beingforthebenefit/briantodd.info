@@ -1,0 +1,22 @@
+name: Deploy to Local Web Server
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Pull latest changes
+        runs: git pull origin master
+
+      - name: Update local web server
+        run: |
+          docker-compose -f ../../../docker-compose.yml pull
+          docker-compose -f ../../../docker-compose.yml up -d
