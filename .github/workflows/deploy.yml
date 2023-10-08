@@ -18,4 +18,5 @@ jobs:
 
       - name: Update local web server
         run: |
+          pwd
           git pull
