@@ -18,5 +18,5 @@ jobs:
 
       - name: Update local web server
         run: |
-          pwd
-          git pull
+          docker-compose -f ../docker-compose.yml
+          docker-compose -f ../docker-compose.yml
